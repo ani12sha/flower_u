@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enquiry</title>
+  <link rel="shortcut icon" href="fav.jpg" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        body {
+            background-color: palevioletred;
+        }
+
+        .enquiry-form {
+            background: pink;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .enquiry-form .form-label {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .enquiry-form .btn-submit {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #ffffff;
+        }
+
+        .enquiry-form .btn-submit:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Enquiry Form -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-8">
+                <div class="enquiry-form">
+                    <h2 class="text-center">Course Enquiry</h2>
+                    <form id="enquiryForm" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email ID</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Full Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter your full address" required>
+                            <div class="invalid-feedback">Please enter your full address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone No.</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                            <a href="index.html" class="btn btn-light text-dark" style="opacity: 0.8;">Home</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5">
+        <p>&copy; Anisha Hore. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for form validation
+        (function () {
+            'use strict';
+
+            // Fetch the form we want to validate
+            const form = document.getElementById('enquiryForm');
+
+            // Add a submit event listener
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        })();
+    </script>
+</body>
+</html>
